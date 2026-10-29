@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "TedToPdf",
+  "version": "1.0",
+  "description": "导出TED演讲字幕文稿为PDF，支持双语对照",
+  "permissions": ["downloads"],
+  "host_permissions": ["https://www.ted.com/talks/*", "https://ted.com/talks/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.ted.com/talks/*","https://ted.com/talks/*"],
+      "js": [
+        "pdfmake.min.js",
+        "vfs_fonts.js",
+        "pdf_fonts.js",
+        "content.js",
+        "floating_ui.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/NotoSansSC-Regular.otf", "fonts/NotoSansSC-Bold.otf"],
+      "matches": ["https://www.ted.com/*", "https://ted.com/*"]
+    }
+  ]
+}

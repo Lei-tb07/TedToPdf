@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>TedToPDF</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto}
+body{padding:20px;background:#f8f9fa;min-width:340px;}
+.card{background:#ffffff;border-radius:14px;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,0.08);}
+.header{border-bottom:1px solid #e9ecef;padding-bottom:14px;margin-bottom:20px;}
+h2{font-size:22px;color:#212529;font-weight:600;}
+.item{margin-bottom:18px;}
+label{display:block;margin-bottom:7px;font-size:14px;color:#495057;font-weight:500;}
+select{width:100%;padding:11px 13px;border:1px solid #dee2e6;border-radius:10px;font-size:15px;background:#fff;color:#212529;}
+button{width:100%;padding:14px;margin-top:6px;border:none;border-radius:10px;background:#dc3545;color:#fff;font-size:16px;font-weight:600;cursor:pointer;transition:0.2s;}
+button:disabled{background:#adb5bd;cursor:not-allowed;}
+#info{margin-top:14px;font-size:13px;color:#495057;white-space:pre-wrap;min-height:22px;}
+</style>
+<script src="pdfmake.min.js" defer></script>
+<script src="vfs_fonts.js" defer></script>
+<script src="pdf_fonts.js" defer></script>
+</head>
+<body>
+<div class="card">
+    <div class="header">
+        <h2>TedToPDF</h2>
+    </div>
+    <div class="item">
+        <label>语言 1</label>
+        <select id="lang1Sel"></select>
+    </div>
+    <div class="item">
+        <label>语言 2</label>
+        <select id="lang2Sel"></select>
+    </div>
+    <button id="genBtn">下载PDF</button>
+    <div id="info"></div>
+</div>
+<script src="side_panel.js" defer></script>
+</body>
+</html>
